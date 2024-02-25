@@ -16,26 +16,24 @@ using namespace std;
 #include <string>
 #include<vector>
 int main(){
-    int n;cin>>n;
+    int n,k;cin>>n>>k;
     int arr[n];
-    set<int>freq;
-    for(int i=0;i<n;i++){
-        int cn;cin>>cn;
-        freq.insert(cn);
-    }
-    if(freq.size()==3){
-        int c1,c2,c3;
-        int i=0;
-        for(auto v:freq){
-            if(i==0)c1=v;
-            else if(i==1)c2=v;
-            else if(i==2)c3=v;
-            i++;
+    int sum=0;
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+        if(arr[i]<0&&k>0){
+            arr[i]*=-1;
+            k--;
         }
- 
-        if(c3-c2==c2-c1)yes
-        else no
+        sum+=arr[i];
     }
-    else if(freq.size()>3)no
-    else yes
+    if(k>0&&k%2!=0){
+    sort(arr,arr+n);
+    while(k>0){
+        arr[0]*=-1;k--;
+    }
+    sum+=arr[0]*2;
+    }
+    cout<<sum<<endl;
 }
