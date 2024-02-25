@@ -15,6 +15,17 @@ using namespace std;
 #include <sstream>
 #include <string>
 #include<vector>
+#define fastread() (ios_base:: sync_with_stdio(false),cin.tie(NULL));
+#define yes cout<<"YES"<<endl;
+#define sf scanf
+#define no cout<<"NO"<<endl;
+#define ll long long
+#define input(arr); for(int i=0;i<n;i++)cin>>arr[i];
+#define output(arr); for(int i=0;i<n;i++)cout<<arr[i]<<" ";
+#define setoutput(set); for(auto i=set.begin();i!=set.end();i++)cout<<*i<<" ";
+#define FIO ios_base::sync_with_stdio(0);cin.tie(0);
+#define sortvec(ve); sort(ve.begin(),ve.end());
+#define sortarr(arr); sort(arr,arr+n);
 int main(){
     int n,k;cin>>n>>k;
     int arr[n];
