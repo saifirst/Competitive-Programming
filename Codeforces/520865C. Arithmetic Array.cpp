@@ -33,14 +33,23 @@ cin.tie(0);
 int t;cin>>t;
 while(t--){
     int n;cin>>n;
-    int arr[n];
-    int odds=0;
-    for(int i=0;i<2*n;i++){
+    double arr[n];
+    double sum=0;
+    for(int i=0;i<n;i++){
         cin>>arr[i];
-        if(arr[i]%2!=0)odds++;
+        sum+=arr[i];
+        
     }
-    if(odds==n)cout<<"Yes"<<endl;
-    else cout<<"No"<<endl;
+    if(sum/n==1){
+        cout<<0<<endl;
+    }
+    else if(sum/n>1){
+        cout<<sum-n<<endl;
+    }
+    else if(sum/n<1){
+        cout<<1<<endl;
+    }
+    
  
 }
  
