@@ -9,16 +9,11 @@ https://www.linkedin.com/in/saif-btoush/
 */
 class Solution {
 public:
-    int numberOfSpecialChars(string word) {
+    int findPermutationDifference(string s, string t) {
         int res=0;
-        set<char>se;
-        for(int i=0;i<word.length();i++)
-            se.insert(word[i]);
-        for(auto s:se){
-            char temp=s;
-            if(tolower(temp)==s){
-                if(find(se.begin(),se.end(),toupper(temp))!=se.end())res++;
-            }
+        
+        for(int i=0;i<s.length();i++){
+            res+=abs(static_cast<int>(s.find(s[i]))-static_cast<int>(t.find(s[i])));
         }
         return res;
     }
